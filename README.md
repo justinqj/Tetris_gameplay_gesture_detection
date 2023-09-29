@@ -1,99 +1,34 @@
-Certainly! Here's a `README.md` for the four folders you've provided:
+# Tetris Gameplay with Gesture Detection
+Our project introduces a novel interface for Tetris, leveraging gesture detection powered by a deep learning model trained on facial landmarks. This innovation transforms conventional gameplay, enabling controls through intuitive head movements. Developed using the Pygame library, our interface facilitates controls like piece movement and rotation via corresponding head motions, underscoring the potential of gesture-based interfaces in gaming.
 
----
+## 1. Introduction & Background
+### 1.1 Objective
+By intertwining the nostalgic charm of Tetris with contemporary gesture detection technologies, we aim to reshape the gaming landscape. Our project's motivation stems from both innovation and inclusivity. Traditional gaming controls, often hand-based, limit gameplay interaction. Our gesture-based controls contribute to an evolving gaming space that enhances user engagement. Moreover, our controls provide an alternative for those who may find typical gaming controls challenging, promoting more accessible gaming experiences.
 
-# Project Overview
+### 1.2 Intended Outcome
+Our project serves dual purposes: entertainment and potential therapeutic applications. While offering an engaging way to play Tetris, it also suggests potential uses in motor skill rehabilitation or coordination improvement exercises.
 
-This repository contains a collection of Python scripts and tools spanning across four main directories. Each directory serves a unique purpose, ranging from simple Python exercises to more complex applications like a Tetris game and video frame extraction.
+## 2. Technical Overview
+### 2.1 Workflow
+Face Detector: Employs a real-time face detector optimized for CPUs.
+PIPNet: Calculates facial landmarks.
+Gesture Detector: Determines the onset of a gesture.
+Gesture Classifier: Classifies the gesture based on facial landmarks.
+We utilize the Resnet18 CNN architecture for its accuracy and swift inference. The facial landmarks are determined using the PIPNet method.
 
-## 1. Python Basics
+## 3. File Structure Overview
+### 3.1 Face Landmarks Folder
+Contains the trained model and scripts to detect facial landmarks, which are crucial for the gesture detection mechanism.
 
-This folder is an introduction to basic Python programming. It covers foundational concepts such as:
+### 3.2 My Pipnet Folder
+Houses the implementation of the PIPNet method, which is used to calculate facial landmarks. This method is integral to the gesture detection process.
 
-- Variables and Data Types
-- Conditional Statements
-- Loops
-- Functions
-- Lists and Dictionaries
+### 3.3 tetris_pygame Folder
+main.py: Main game logic with a GUI interface.
+tetris.py: Contains the Tetris game mechanics and gesture detection.
+settings.py: Configuration and settings for the game.
+button.py: Manages button functionalities in the game.
+cam_testing.py: Tests camera functionalities.
 
-It's an excellent starting point for beginners looking to grasp the fundamentals of Python.
-
-## 2. Python Advanced
-
-Diving deeper into Python, this directory explores more advanced topics, including:
-
-- Object-Oriented Programming (OOP)
-- Inheritance and Polymorphism
-- File Handling
-- Modules and Packages
-- Exception Handling
-
-These scripts provide a solid foundation for intermediate Python developers aiming to enhance their skills.
-
-## 3. Tetris Pygame
-
-A fun and interactive Tetris game built using the Pygame library. Features include:
-
-- Classic Tetris gameplay with modern graphics.
-- Customizable buttons with hover effects.
-- Integration of webcam feed directly into the game interface.
-- Dynamic text rendering with changing colors.
-- A main menu with Play and Quit options.
-
-The game showcases the power of Pygame and how it can be used to create engaging applications.
-
-## 4. Video Extractor
-
-This tool is designed for extracting frames from video files. Key functionalities are:
-
-- Processing specific video formats like `.mp4` and `.avi`.
-- Saving each frame of the video as individual image files.
-- Customizable input and output directories.
-
-Utilizing the OpenCV library, this script is perfect for projects that require frame-by-frame analysis of videos.
-
----
-
-## Dependencies
-
-To run the scripts, ensure you have the following libraries installed:
-
-- `pygame`
-- `cv2` (OpenCV)
-- `os`
-
-You can install them using `pip`:
-
-```
-pip install pygame opencv-python
-```
-
-## Usage
-
-Navigate to the desired directory and run the main Python script. For instance, to play the Tetris game:
-
-```
-cd tetris_pygame
-python main.py
-```
-
-For the video extractor:
-
-```
-cd video_extractor
-python main.py
-```
-
----
-
-## Contributing
-
-Feel free to fork this repository and submit pull requests for any enhancements or bug fixes. Your contributions are welcome!
-
-## License
-
-This project is open-source and available under the MIT License.
-
----
-
-I hope this `README.md` provides a clear overview of the projects in your repository!
+### 3.4 Video Extractor Folder
+main.py: Extracts frames from videos and saves them as images, aiding in the data collection process for training the deep learning models.
